@@ -613,13 +613,50 @@ img {
 
 /* ---------- Social Feed ---------- */
 .social-feed-section {
-  max-width: 1100px;
+  width: 100%;
+  max-width: none;
+  min-height: calc(100vh - var(--nav-height));
+  padding: 0;
 }
 
 .social-feed-container {
   width: 100%;
-  min-height: 500px;
+  min-height: calc(100vh - var(--nav-height));
   margin: 0 auto;
+}
+
+.social-feed-container > [class^="elfsight-app-"],
+.social-feed-container > [class*=" elfsight-app-"] {
+  width: 100%;
+  min-height: calc(100vh - var(--nav-height));
+}
+
+.social-feed-container iframe {
+  width: 100% !important;
+  min-height: calc(100vh - var(--nav-height));
+}
+
+.social-feed-container .es-embed-root,
+.social-feed-container .es-widget-background-container,
+.social-feed-container .es-widget-background-wrapper,
+.social-feed-container .es-widget-background-content {
+  width: 100% !important;
+  max-width: none !important;
+  min-height: calc(100vh - var(--nav-height));
+}
+
+.social-feed-container [class*="Main__Inner-"],
+.social-feed-container [class*="Layout__LayoutContainer-"],
+.social-feed-container .es-tabs-container,
+.social-feed-container .es-tabs-slider-container,
+.social-feed-container .es-tabs-slider-inner {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.social-feed-container .es-grid-layout {
+  width: 100% !important;
+  max-width: none !important;
 }
 
 /* ---------- Raid Night Countdowns ---------- */
