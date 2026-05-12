@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Raining Embers community forums for guild conversations, updates, and event planning.">
+  <title>Raining Embers | Community Forums</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/guild-logo.png" type="image/png">
+</head>
+<body>
+
+  <!-- Animated floating ember particles -->
+  <canvas id="ember-canvas"></canvas>
+
+  <div class="page-wrapper">
+
+    <!-- ===================== NAVIGATION ===================== -->
+    <nav class="main-nav" id="main-nav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" id="nav-logo">
+          <img src="images/guild-logo.png" alt="Raining Embers Logo">
+          <span>&nbsp;</span>
+        </a>
+
+        <div class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html" id="nav-home">Home</a></li>
+          <li><a href="roster.html" id="nav-roster">Roster</a></li>
+          <li><a href="countdowns.html" id="nav-countdowns">Raid Night Countdowns</a></li>
+          <li><a href="community-forums.html" class="active" id="nav-forums">Community Forums</a></li>
+          <li><a href="invite.html" id="nav-invite">Join Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ===================== PAGE HEADER ===================== -->
+    <section class="hero" id="page-hero" style="min-height:50vh;">
+      <div class="hero-bg">
+        <img src="images/hero-banner.png" alt="Community Forums Banner">
+      </div>
+      <div class="hero-content">
+        <h1>&nbsp;</h1>
+        <h1>Community Forums</h1>
+        <p class="tagline">Guild Talks, Plans, and Updates</p>
+        <p>Stay connected with the Raining Embers community, raid planning, guild updates, and member conversations.</p>
+      </div>
+    </section>
+
+    <!-- ===================== COMMUNITY FORUMS ===================== -->
+    <section class="content-section forum-section" id="community-forums">
+      <iframe
+        class="forum-frame"
+        src="https://rainingembers.discourse.group/embed/comments?topic_id=13&amp;full_app=true"
+        title="Raining Embers Community Forums"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </section>
+
+  </div><!-- /.page-wrapper -->
+
+  <script src="js/main.js"></script>
+</body>
+</html>
