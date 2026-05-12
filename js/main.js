@@ -317,4 +317,46 @@
 
   initRaidCountdowns();
 
+  /* -------- Guild Info Embed Height -------- */
+  function initGuildInfoEmbed() {
+    var iframe = document.querySelector('.guild-info-iframe');
+    var section = document.querySelector('.guild-info-section');
+    var container = document.querySelector('.notion-embed-container');
+
+    if (!iframe || !section || !container) return;
+
+    function applyEmbedHeight(value) {
+      var height = parseInt(value, 10);
+      if (!height || height < window.innerHeight) return;
+
+      var nextHeight = height + 'px';
+      section.style.setProperty('--guild-info-embed-height', nextHeight);
+      iframe.style.height = nextHeight;
+    }
+
+    window.addEventListener('message', function (event) {
+      if (!event.origin || event.origin.indexOf('v2-embednotion.com') === -1) return;
+
+      var data = event.data;
+      var height = null;
+
+      if (typeof data === 'number') {
+        height = data;
+      } else if (typeof data === 'string') {
+        var match = data.match(/height["'=:\s]+(\d+)/i);
+        height = match ? match[1] : null;
+      } else if (data && typeof data === 'object') {
+        height = data.height || data.iframeHeight || data.scrollHeight || data.documentHeight;
+
+        if (!height && data.data && typeof data.data === 'object') {
+          height = data.data.height || data.data.iframeHeight || data.data.scrollHeight || data.data.documentHeight;
+        }
+      }
+
+      applyEmbedHeight(height);
+    });
+  }
+
+  initGuildInfoEmbed();
+
 })();

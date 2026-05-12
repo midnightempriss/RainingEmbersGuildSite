@@ -611,6 +611,33 @@ img {
   border-radius: 8px;
 }
 
+/* ---------- Guild Info / Notion Embed ---------- */
+.guild-info-section {
+  --guild-info-embed-height: 12000px;
+  width: 100%;
+  max-width: none;
+  min-height: var(--guild-info-embed-height);
+  padding: 0;
+}
+
+.notion-embed-container {
+  width: 100%;
+  min-height: var(--guild-info-embed-height);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.notion-embed-container iframe {
+  display: block;
+  width: 100%;
+  height: var(--guild-info-embed-height);
+  min-height: var(--guild-info-embed-height);
+  background: #ffffff;
+  overflow: hidden;
+}
+
 /* ---------- Social Feed ---------- */
 .social-feed-section {
   width: 100%;
@@ -1042,6 +1069,11 @@ img {
     text-align: left;
     margin-top: 0;
   }
+
+  .guild-info-section {
+    --guild-info-embed-height: 16000px;
+    padding: 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1055,6 +1087,10 @@ img {
 
   .content-section {
     padding: 60px 15px;
+  }
+
+  .guild-info-section {
+    padding: 0;
   }
 
   .hero-content .tagline {
