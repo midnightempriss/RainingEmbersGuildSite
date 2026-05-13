@@ -425,7 +425,7 @@ img {
 /* ---------- Feature Cards ---------- */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   margin-top: 40px;
 }
@@ -433,8 +433,8 @@ img {
 .feature-card {
   background: linear-gradient(145deg, var(--color-bg-card), rgba(30,24,18,0.8));
   border: var(--border-ember);
-  border-radius: 12px;
-  padding: 40px 30px;
+  border-radius: 8px;
+  padding: 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -470,6 +470,25 @@ img {
 
 .feature-card:hover::before {
   opacity: 1;
+}
+
+.feature-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: contain;
+  background: #050302;
+  transition: transform var(--transition-speed) ease;
+}
+
+.feature-card:hover .feature-image {
+  transform: scale(1.02);
+}
+
+@media (min-width: 960px) {
+  #feature-friends {
+    grid-column: 2;
+  }
 }
 
 .feature-card .card-icon {
