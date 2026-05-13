@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Raining Embers — View our guild roster and member profiles.">
-  <title>Raining Embers | Roster &amp; Profiles</title>
-  <link rel="stylesheet" href="css/style.css?v=20260512-3">
+  <meta name="description" content="Raining Embers Bluesky feed and latest guild posts.">
+  <title>Raining Embers | Bluesky Feed</title>
+  <link rel="stylesheet" href="css/style.css?v=20260513-1">
+  <link rel="stylesheet" href="https://embedbsky.com/embedbsky.com-master-min.css">
   <link rel="icon" href="images/guild-logo.png" type="image/png">
 </head>
 <body>
@@ -19,7 +20,7 @@
     <nav class="main-nav" id="main-nav">
       <div class="nav-inner">
         <a href="index.html" class="nav-logo" id="nav-logo">
-          <img src="images/guild-logo.png" alt="Raining Embers Logo" width="500" height="338">
+          <img src="images/guild-logo.png" alt="Raining Embers Logo">
           <span>&nbsp;</span>
         </a>
 
@@ -32,10 +33,10 @@
         <ul class="nav-links" id="nav-links">
           <li><a href="index.html" id="nav-home">Home</a></li>
           <li><a href="guild-info.html" id="nav-guild-info">Guild Info</a></li>
-          <li><a href="roster.html" class="active" id="nav-roster">Roster</a></li>
+          <li><a href="roster.html" id="nav-roster">Roster</a></li>
           <li><a href="calendar.html" id="nav-calendar">Calendar</a></li>
           <li><a href="countdowns.html" id="nav-countdowns">Raid Night Countdowns</a></li>
-          <li><a href="bluesky-feed.html" id="nav-bluesky-feed">Bluesky Feed</a></li>
+          <li><a href="bluesky-feed.html" class="active" id="nav-bluesky-feed">Bluesky Feed</a></li>
           <li><a href="social-feeds.html" id="nav-social-feeds">Social Feeds</a></li>
           <li><a href="invite.html" id="nav-invite">Join Us</a></li>
         </ul>
@@ -45,43 +46,23 @@
     <!-- ===================== PAGE HEADER ===================== -->
     <section class="hero" id="page-hero" style="min-height:50vh;">
       <div class="hero-bg">
-        <img src="images/hero-banner.png" alt="Roster Banner">
+        <img src="images/hero-banner.png" alt="Bluesky Feed Banner">
       </div>
       <div class="hero-content">
         <h1>&nbsp;</h1>
-        <h1>Roster &amp;&nbsp; external Profiles</h1>
-<p class="tagline">Meet the Embers</p>
-        <p>Click one of the buttons below to be taken to the corresponding guild profile page.&nbsp;&nbsp;</p>
+        <h1>Bluesky Feed</h1>
+        <p class="tagline">Latest Bluesky Posts</p>
+        <p>Follow the newest Raining Embers updates from Bluesky.</p>
       </div>
     </section>
 
     <!-- ===================== DIVIDER ===================== -->
     <hr class="section-divider">
 
-    <!-- ===================== ROSTER LINKS ===================== -->
-    <section class="content-section" id="roster-section">
-      <div class="section-header reveal">
-        <h2>Our Rosters</h2>
-        <span class="accent-line"></span>
-        <p>Select a roster/profile to view detailed member profiles on our external platforms.</p>
-      </div>
-
-      <div class="roster-grid">
-
-        <!-- ROSTER LINK 1 — Replace href and image -->
-        <a href="https://raider.io/guilds/us/dalaran/Raining%20Embers" class="roster-link reveal" id="roster-link-1" target="_blank" rel="noopener noreferrer">
-          <img src="images/main_guild_button.png" alt="Roster 1 — Click to view">
-          <div class="overlay">
-          </div>
-        </a>
-
-        <!-- ROSTER LINK 2 — Replace href and image -->
-        <a href="https://worldofwarcraft.blizzard.com/en-us/guild/us/wyrmrest-accord/raining-embers-alts/" class="roster-link reveal" id="roster-link-2" target="_blank" rel="noopener noreferrer">
-          <img src="images/alt_guild_button1.png" alt="Roster 2 — Click to view">
-          <div class="overlay">
-          </div>
-        </a>
-
+    <!-- ===================== BLUESKY FEED ===================== -->
+    <section class="content-section bluesky-feed-section" id="bluesky-feed-section">
+      <div class="bluesky-feed-container">
+        <div id="embedbsky-com-timeline-embed" class="darkmode hasfooter"></div>
       </div>
     </section>
 
@@ -113,6 +94,7 @@
 
   </div><!-- /.page-wrapper -->
 
+  <script>let containerWidth=1000,containerHeight=2000;const getHtml=async t=>{const e=await fetch(t);return 200!==e.status?'<p><strong>No feed data could be located</p></strong>':e.text()};document.addEventListener('DOMContentLoaded',(async()=>{const t=(new Date).toISOString(),e=document.getElementById('embedbsky-com-timeline-embed');e.style.width=`${containerWidth}px`,e.style.height=`${containerHeight}px`;const n=await getHtml(`https://embedbsky.com/feeds/45c3c655633818e3b435ecff223bab338a97790dfe7da70923f43863d0fac52e.html?v=${t}`);e.innerHTML=n}));</script>
   <script src="js/main.js?v=20260512-2"></script>
 </body>
 </html>
