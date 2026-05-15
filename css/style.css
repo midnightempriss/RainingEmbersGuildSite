@@ -142,7 +142,8 @@ img {
   flex: 1 1 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 12px;
   padding: 0 clamp(16px, 3vw, 40px);
 }
 
@@ -170,11 +171,48 @@ img {
   text-transform: uppercase;
 }
 
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  margin-left: 2px;
+}
+
+.nav-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(232, 98, 30, 0.1);
+  color: var(--color-ember-bright);
+  border: 1px solid rgba(232, 98, 30, 0.3);
+  transition: all var(--transition-speed) ease;
+}
+
+.nav-social a:hover,
+.nav-social a:focus-visible {
+  background: var(--color-ember-bright);
+  color: #fff;
+  border-color: var(--color-ember-bright);
+  box-shadow: var(--glow-ember);
+  transform: translateY(-2px);
+}
+
+.nav-social svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
   gap: 4px;
   list-style: none;
+  margin-left: auto;
 }
 
 .nav-links li a {
@@ -246,6 +284,7 @@ img {
   gap: 5px;
   cursor: pointer;
   padding: 5px;
+  margin-left: auto;
   z-index: 1001;
 }
 
@@ -1070,7 +1109,7 @@ img {
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 1080px) {
+@media (max-width: 1240px) {
   .nav-toggle {
     display: flex;
   }
@@ -1174,8 +1213,33 @@ img {
     --nav-height: 60px;
   }
 
+  .nav-inner {
+    gap: 8px;
+    padding: 0 12px;
+  }
+
+  .nav-logo img {
+    width: 90px;
+    height: 54px;
+  }
+
   .nav-logo span {
     font-size: 1rem;
+  }
+
+  .nav-social {
+    gap: 6px;
+    margin-left: 0;
+  }
+
+  .nav-social a {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-social svg {
+    width: 13px;
+    height: 13px;
   }
 
   .content-section {
@@ -1209,5 +1273,29 @@ img {
 
   .countdown-unit span {
     font-size: 1.95rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-inner {
+    padding: 0 8px;
+  }
+
+  .nav-logo img {
+    width: 78px;
+    height: 47px;
+  }
+
+  .nav-social {
+    gap: 4px;
+  }
+
+  .nav-social a {
+    width: 25px;
+    height: 25px;
+  }
+
+  .nav-toggle span {
+    width: 24px;
   }
 }
